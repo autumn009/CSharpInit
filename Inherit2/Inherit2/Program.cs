@@ -1,12 +1,12 @@
 ﻿var x = new B();
+Console.WriteLine($"x.MyProperty={x.MyProperty}");
 
 class A
 {
-    protected virtual int MyProperty { get; set; } = 1;
+    internal int MyProperty { get; set; } = 1;
     internal A() => Console.WriteLine($"A constructed MyProperty={MyProperty}");
 }
 class B : A
 {
-    protected override int MyProperty { get; set; } = 2;
-    internal B() => Console.WriteLine($"B constructed MyProperty={MyProperty}");
+    internal B() => MyProperty = 2;
 }
